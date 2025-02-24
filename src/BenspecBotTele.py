@@ -7,18 +7,21 @@ from PIL import Image
 from shared_functions import setup_firefox_driver
 
 # Telegram bot token and group ID
-telegram_token = "7821854612:AAFo9UlxR4FETkN7uCjTtE820Vm8ra9vSsw"
-telegram_group_id = "-266977133"
+telegram_token = "your_telegram_token" #Edit your telegram account token here
+telegram_group_id = "your_telegram_group_id" #Edit your group id where you sent the message
 
 current_date = datetime.now().strftime("%Y-%m-%d")
-message = f"[{current_date}] Monitor Unspec Hari ini\n@arkham_arifeni @user_trial5"
+message = f"[{current_date}] Unspec Today"
+
+# Google Drive link
+gdrive_link = "your_gdrive_link"
 
 def main():
     driver = setup_firefox_driver(download_path=None, headless=True)
     driver.set_window_size(2066, 1068)
 
     try:
-        driver.get("https://docs.google.com/spreadsheets/d/11rwoXLkOiyBmLV7-jvm_bAEDLIj4kA9ffZlyoYz-ldg/edit?gid=331702768#gid=331702768")
+        driver.get(gdrive_link)
         time.sleep(3)
 
         # Capture full screenshot
