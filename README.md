@@ -2,7 +2,9 @@
 
 a KPI Underspec Bot for daily underperform ONU in Telkom Magelang
 
-This project automates the process of downloading and processing data from various sources, such as AQI, iBooster, and sending notifications via Telegram.
+This project automates the process of downloading and processing data from various sources, such as AQI, iBooster (Internal Company App), and sending notifications via Telegram.
+
+This code doesn't have demo as it could breach the company NDA
 
 ## Features
 
