@@ -134,3 +134,27 @@ def captcha_processor(captcha_image_path, output_path="preprocessed_captchas.png
     except Exception as e:
         print(f"Error processing CAPTCHA: {e}")
         return None
+
+def setup_firefox_driver(download_path, headless=True):
+    """
+    Sets up and returns a Firefox WebDriver instance.
+
+    Args:
+        download_path (str): Path to the download directory.
+        headless (bool): Whether to run in headless mode.
+
+    Returns:
+        WebDriver: Configured Firefox WebDriver instance.
+    """
+    firefox_options = Options()
+    firefox_options.set_preference("browser.download.folderList", 2)
+    firefox_options.set_preference("browser.download.dir", download_path)
+    firefox_options.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/vnd.ms-excel")
+    firefox_options.set_preference("browser.download.manager.showWhenStarting", False)
+    firefox_options.set_preference("pdfjs.disabled", True)
+    firefox_options.set_preference("network.proxy.type", 0)
+    if headless:
+        firefox_options.add_argument('-headless')
+    service = Service(gecko_path)
+    driver = webdriver.Firefox(service=service, options=firefox_options)
+    return driver
