@@ -11,6 +11,8 @@ cookie_file = "cookies.pkl"
 success_url = "https://access-quality.telkom.co.id/aqi/index.php/home"
 login_url = f"https://access-quality.telkom.co.id/aqi/index.php/login"
 download_url = f"https://access-quality.telkom.co.id/aqi/index.php/unspec/semesta/detail?regional=4&witel=MAGELANG&jenis=total_saldo&filter={today}"
+user_name = "your_username"
+pass_word = "your_password"
 
 # Google Drive settings
 SERVICE_ACCOUNT_FILE = 'witelmagelang-9ecb6346aadd.json'
@@ -55,8 +57,8 @@ def login_attempt(driver):
         print(f"Captcha Text: {captcha_text}")
 
         # Enter credentials and captcha
-        driver.find_element(By.ID, "username").send_keys("960433")
-        driver.find_element(By.ID, "password").send_keys("MrMM0819680189!!")
+        driver.find_element(By.ID, "username").send_keys(user_name)
+        driver.find_element(By.ID, "password").send_keys(pass_word)
         driver.find_element(By.ID, "captcha").send_keys(captcha_text)
 
         time.sleep(1)
