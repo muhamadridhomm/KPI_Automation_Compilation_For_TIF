@@ -6,11 +6,13 @@ import os
 from shared_functions import upload_to_drive, get_latest_downloaded_file, save_cookies, load_cookies, captcha_processor, setup_firefox_driver
 
 # Constants
-cookie_file = "cookiesbooster.pkl"
+cookie_file = "./data/cookiesbooster.pkl"
 start_url = "https://dbaccess-ibooster.telkom.co.id"
 success_url = "https://dbaccess-ibooster.telkom.co.id/ibooster/home.php"
 login_url = "https://dbaccess-ibooster.telkom.co.id/login/"
 download_url = f"https://dbaccess-ibooster.telkom.co.id/ibooster/home.php?page=PG336"
+user_name = "your_username"
+pass_word = "your_password"
 
 # Google Drive settings
 SERVICE_ACCOUNT_FILE = 'witelmagelang-9ecb6346aadd.json'
@@ -40,8 +42,8 @@ def login_attempt(driver):
         print(f"Captcha Text: {captcha_text}")
 
         # Enter credentials and captcha
-        driver.find_element(By.ID, "username").send_keys("960433")
-        driver.find_element(By.ID, "password").send_keys("MrMM0819680189!")
+        driver.find_element(By.ID, "username").send_keys(user_name)
+        driver.find_element(By.ID, "password").send_keys(pass_word)
         driver.find_element(By.NAME, "captcha").send_keys(captcha_text)
 
         time.sleep(1)
