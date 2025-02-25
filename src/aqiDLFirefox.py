@@ -7,7 +7,7 @@ from shared_functions import upload_to_drive, get_latest_downloaded_file, save_c
 
 # Constants
 today = datetime.now().strftime("%Y-%m-%d")
-cookie_file = "cookies.pkl"
+cookie_file = "./data/cookiesaqi.pkl"
 success_url = "https://access-quality.telkom.co.id/aqi/index.php/home"
 login_url = f"https://access-quality.telkom.co.id/aqi/index.php/login"
 download_url = f"https://access-quality.telkom.co.id/aqi/index.php/unspec/semesta/detail?regional=4&witel=MAGELANG&jenis=total_saldo&filter={today}"
